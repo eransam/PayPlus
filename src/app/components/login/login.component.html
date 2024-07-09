@@ -1,0 +1,41 @@
+<div
+  class="login-container"
+  style="display: flex; justify-content: center; margin: 5%"
+>
+  <h2>User Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">Identification Number:</label>
+      <input id="id" formControlName="id" />
+      <div
+        *ngIf="loginForm.get('id')?.invalid && loginForm.get('id')?.touched"
+        class="error-message"
+      >
+        <div *ngIf="loginForm.get('id')?.errors?.['required']">
+          ID is required.
+        </div>
+        <div *ngIf="loginForm.get('id')?.errors?.['invalidId']">
+          Invalid Israeli ID.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input id="password" type="password" formControlName="password" />
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          loginForm.get('password')?.touched
+        "
+        class="error-message"
+      >
+        <div *ngIf="loginForm.get('password')?.errors?.['required']">
+          Password is required.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+</div>
