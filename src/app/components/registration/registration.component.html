@@ -1,0 +1,39 @@
+<div class="registration-box">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Identification Number</mat-label>
+        <input matInput type="number" formControlName="identificationNumber" placeholder="Enter your ID number" required>
+        <mat-error *ngIf="form.get('identificationNumber').hasError('required')">Identification Number is required</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullName" placeholder="Enter your full name" required>
+        <mat-error *ngIf="form.get('fullName').hasError('required')">Full Name is required</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="Enter your email" required>
+        <mat-error *ngIf="form.get('email').hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="form.get('email').hasError('email')">Invalid email format</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Enter your password" required>
+        <mat-error *ngIf="form.get('password').hasError('required')">Password is required</mat-error>
+        <mat-error *ngIf="form.get('password').hasError('minlength')">Password should be at least 6 characters</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" placeholder="Confirm your password" required>
+        <mat-error *ngIf="form.get('confirmPassword').hasError('required')">Please confirm your password</mat-error>
+        <mat-error *ngIf="form.hasError('passwordMismatch')">Passwords do not match</mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Register</button>
+    </form>
+  </div>
+  

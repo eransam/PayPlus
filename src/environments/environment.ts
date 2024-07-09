@@ -8,7 +8,8 @@ export const environment = {
   client_id:
     '867340997526-6fjqppgfbqb63im6imqnmgc158tll7rs.apps.googleusercontent.com',
   redirect_uri: 'http://localhost:4200/profile',
-  // auth:
+  // auth:  apiUrl: 'http://localhost:3000/api' // Replace with your actual API URL
+
   emailAndSSNUniqueUrl: 'http://localhost:3001/api/auth/ssn-email-unique/',
   registerUrl: 'http://localhost:3001/api/auth/register/',
   loginUrl: 'http://localhost:3001/api/auth/login/',

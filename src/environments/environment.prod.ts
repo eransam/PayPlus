@@ -8,6 +8,7 @@ export const environment = {
   client_id:
     '867340997526-h1vnp79tlsob39ha62m2vj0l5jr046ep.apps.googleusercontent.com',
   redirect_uri: 'https://www.easybox-ai.com/profile',
+  apiUrl: 'http://localhost:3000/api', // Replace with your actual API URL
 
   // auth:
   emailAndSSNUniqueUrl:
